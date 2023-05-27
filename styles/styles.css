@@ -53,3 +53,44 @@ form {
   button:hover {
     background-color: #45a049;
   }
+
+
+  /*Card*/
+  .list-card{
+    list-style: none;
+  }
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+  max-width: 400px;
+  font-family: Arial, sans-serif;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+}
+
+.card strong {
+  font-weight: bold;
+}
+
+.card span {
+  font-weight: normal;
+}
+
+.card p {
+  margin-top: 0;
+}

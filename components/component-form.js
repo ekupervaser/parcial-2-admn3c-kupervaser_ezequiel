@@ -15,6 +15,8 @@ Vue.component('component-form', {
         }
     },
 
+    props: ["getAnimalsList"],
+
     methods: {
         submitForm: function (event) {
             event.preventDefault();
@@ -22,10 +24,19 @@ Vue.component('component-form', {
             let newAnimal = {
                 animalName: this.nombre,
                 especie: this.especie,
+                raza: this.raza,
+                edad: this.edad,
+                sexo: this.sexo,
+                color: this.color,
+                tamanio: this.tamanio,
+                nombreDueno: this.nombreDueno,
+                emailDueno: this.emailDueno,
+                telefonoDueno: this.telefonoDueno,
+                infoAdicional: this.infoAdicional
             }
-           
 
             this.setNewAnimal(newAnimal)
+            this.getAnimalsList()
         },
 
         setNewAnimal: function (newAnimal) {
@@ -42,14 +53,12 @@ Vue.component('component-form', {
         }else {
             // Si no existe en localstorage la key de listaAnimales la crea y le agrega el nuevo animal en un array transformando en string
             localStorage.setItem("listaAnimales",  JSON.stringify([newAnimal]))
-        }
-
+            }
         }
     },
 
     template: 
     `<div>
-    <p>{{nombre}}</p>
     <form action="">
     <label for="animalName">Nombre del animal:</label>
     <input type="text" id="animalName" name="animalName" v-model="nombre" />
@@ -65,9 +74,8 @@ Vue.component('component-form', {
 
     <label for="sex">Sexo:</label>
     <select id="sex" name="sex" v-model="sexo">
-      <option value="male">Macho</option>
-      <option value="female">Hembra</option>
-      <option value="other">Otro</option>
+      <option value="macho">Macho</option>
+      <option value="hembra">Hembra</option>
     </select>
 
     <label for="color">Color o patrón:</label>
@@ -75,9 +83,9 @@ Vue.component('component-form', {
 
     <label for="size">Tamaño:</label>
     <select id="size" name="size" v-model="tamanio">
-      <option value="small">Pequeño</option>
-      <option value="medium">Mediano</option>
-      <option value="large">Grande</option>
+      <option value="chico">Pequeño</option>
+      <option value="mediano">Mediano</option>
+      <option value="grande">Grande</option>
     </select>
 
     <label for="ownerName">Nombre del dueño:</label>
