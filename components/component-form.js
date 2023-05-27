@@ -100,7 +100,7 @@ Vue.component('component-form', {
     <label for="additionalInfo">Información adicional:</label>
     <textarea id="additionalInfo" name="additionalInfo" v-model="infoAdicional"></textarea>
 
-    <button type="submit" v-on:click="submitForm($event)">Registrar</button>
+    <button type="submit" @click="submitForm($event)">Registrar</button>
   </form>
   </div>
   `

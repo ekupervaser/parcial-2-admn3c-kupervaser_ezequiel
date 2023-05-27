@@ -9,13 +9,21 @@
     <title>Parcial I - Ezequiel Kupervaser</title>
   </head>
   <body>
-    <header>
-      <h1>Registro de animales</h1>
-    </header>
     <main id="app-container">
-      <component-form :get-animals-list="getAnimalsList"></component-form>
+      <header>
+        <h1>Registro<br>de animales</h1>
+        <button v-if="hideForm" @click="displayForm($event)">Cargar Nuevo Animal</button>
+        <button v-else @click="displayForm($event)">Cerrar formulario de carga</button>
+      </header>
 
-      <ul v-if="animalsList.length > 0" class="list-card">
+    
+
+
+      <component-form :get-animals-list="getAnimalsList" v-bind:class="[hideForm ? 'hideForm' : 'showForm']">
+ 
+      </component-form>
+
+      <ul v-if="animalsList" class="list-card">
         <component-card v-for="(animal, index) in animalsList" 
         :nombre=animal.animalName
         :especie=animal.especie
@@ -32,7 +40,7 @@
       </component-card>
       </ul>
 
-      <p v-else>Todavía no se registraron animales. ¡Registra el primero!</p>
+      <p v-else>Todavía no se registraron animales. <button @click="displayForm()">¡Registra el primero!</button></p>
 
     </main>
     <footer></footer>

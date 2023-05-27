@@ -10,7 +10,11 @@ props: ["nombre", "especie", "raza", "edad", "sexo", "color", "tamanio", "nombre
       <li><strong>Especie:</strong> <span>{{especie}}</span></li>
       <li><strong>Raza:</strong> <span>{{raza}}</span></li>
       <li><strong>Edad:</strong> <span>{{edad}}</span></li>
-      <li><strong>Sexo:</strong> <span>{{sexo}}</span></li>
+      <li><strong>Sexo:</strong> 
+      <img v-if="sexo=='macho'" src="../img/masculino.png" alt="Macho"> 
+      <img v-else src="../img/femenino.png" alt="Hembra"> 
+      
+      <span>{{sexo}}</span></li>
       <li><strong>Color:</strong> <span>{{color}}</span></li>
       <li><strong>Tamaño:</strong> <span>{{tamanio}}</span></li>
     </ul>
