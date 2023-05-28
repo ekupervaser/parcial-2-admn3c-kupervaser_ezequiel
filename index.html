@@ -16,9 +16,6 @@
         <button v-else @click="displayForm($event)">Cerrar formulario de carga</button>
       </header>
 
-    
-
-
       <component-form :get-animals-list="getAnimalsList" v-bind:class="[hideForm ? 'hideForm' : 'showForm']">
  
       </component-form>
@@ -41,8 +38,9 @@
       </ul>
 
       <p v-else>Todavía no se registraron animales. <button @click="displayForm()">¡Registra el primero!</button></p>
-
+      
     </main>
+
     <footer></footer>
     <script src="components/component-form.js"></script>
     <script src="components/component-card.js"></script>
