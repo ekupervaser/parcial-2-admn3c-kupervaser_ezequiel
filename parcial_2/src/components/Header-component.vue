@@ -3,8 +3,7 @@
 <header>
   <v-container>
     <h1>Registro de animales</h1>
-    <button>Cargar Nuevo Animal</button>
-    <button>Cerrar formulario de carga</button>
+    <p>Carga un nuevo animal en el sistema</p>
   </v-container>
 </header>
 

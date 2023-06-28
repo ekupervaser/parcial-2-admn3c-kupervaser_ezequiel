@@ -1,10 +1,13 @@
 <template>
-    <footer>
-        <v-container>
-            <p>Parcial II - Ezequiel Kupervaser</p>
-        </v-container>
-    </footer>
-</template>
+    <v-footer padless>
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>Animalfy - Ezequiel Kupervaser</strong>
+      </v-col>
+    </v-footer>
+  </template>
 
 <script>
 export default {
