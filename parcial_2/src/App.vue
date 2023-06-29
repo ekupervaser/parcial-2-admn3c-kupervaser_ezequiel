@@ -33,4 +33,17 @@ body {
     text-decoration: none;
     color: white;
 }
+
+.margen-derecho {
+    margin-right: 10px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.subtitulo {
+    font-size: 1rem;
+}
+
 </style>

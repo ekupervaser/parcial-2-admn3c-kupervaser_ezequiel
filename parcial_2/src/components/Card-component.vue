@@ -3,9 +3,8 @@
 
         <v-card>
             <v-card-item>
-                <v-card-title>Información de la mascota</v-card-title>
+                <v-card-title><span>Información de la mascota </span> </v-card-title>
             </v-card-item>
-
             <v-card-text>
                 <ul>
                     <li><strong>Nombre:</strong> <span>{{ nombre | capitalize }}</span></li>
@@ -14,25 +13,22 @@
                     <li><strong>Edad:</strong> <span>{{ edad | capitalize }}</span></li>
                     <li>
                         <strong>Sexo:</strong>
-
-                        <v-icon aria-hidden="false" v-if="sexo === 'Macho'">
-                            mdi-gender-male
-                        </v-icon>
-
-                        <v-icon aria-hidden="false" v-else>
-                            mdi-gender-female
-                        </v-icon>
+                        <span>
+                            <v-icon v-if="sexo === 'Macho'" color="blue">mdi-gender-male</v-icon>
+                            <v-icon v-else color="pink">mdi-gender-female</v-icon>
+                            {{ sexo | capitalize }}
+                        </span>
                     </li>
                     <li><strong>Color:</strong> <span>{{ color | capitalize }}</span></li>
                     <li><strong>Tamaño:</strong> <span>{{ tamanio | capitalize }}</span></li>
                 </ul>
-                <h2>Información del dueño</h2>
+                <h2 class="subtitulo">Información del dueño</h2>
                 <ul>
                     <li><strong>Nombre del Dueño:</strong> <span>{{ nombreDueno | capitalize }}</span></li>
                     <li><strong>Email del Dueño:</strong> <span>{{ emailDueno | capitalize }}</span></li>
                     <li><strong>Teléfono del Dueño:</strong> <span>{{ telefonoDueno | capitalize }}</span></li>
                 </ul>
-                <h2>Información adicional</h2>
+                <h2 class="subtitulo">Información adicional</h2>
                 <p>{{ infoAdicional }}</p>
             </v-card-text>
         </v-card>

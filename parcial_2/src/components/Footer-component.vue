@@ -14,3 +14,9 @@ export default {
     name: 'Footer-component'
 }
 </script>
+
+<style>
+.footer-container {
+    display: flex;
+}
+</style>
