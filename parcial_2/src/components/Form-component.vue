@@ -63,9 +63,7 @@
     },
     methods: {
       submitForm() {
-        this.$refs.form.validate().then((valid) => {
-          if (valid) {
-            // Lógica para enviar el formulario
+          if (this.$refs.form.validate()) {
             let newAnimal = {
               animalName: this.nombre,
               especie: this.especie,
@@ -83,11 +81,23 @@
             this.$emit('actualizar-mensaje', newAnimal);
             this.setNewAnimal(newAnimal);
           }
-        });
       },
   
       setNewAnimal(newAnimal) {
-        // Lógica para almacenar el nuevo animal
+            // obtener de localstorage si existe o no listaAnimales
+            let oldListAnimals = localStorage.getItem("listaAnimales")
+          // Si tiene informacion
+           if(oldListAnimals) {
+            // transforma la lista en formato string en array 
+           let arrayOldListAnimals= JSON.parse(oldListAnimals)
+           // Inserta el nuevo animal en la lista vieja de animales
+           arrayOldListAnimals.push(newAnimal)
+            // Lo vuelve a seter en localstorage con el nuevo animal
+            localStorage.setItem("listaAnimales",  JSON.stringify(arrayOldListAnimals))
+        }else {
+            // Si no existe en localstorage la key de listaAnimales la crea y le agrega el nuevo animal en un array transformando en string
+            localStorage.setItem("listaAnimales",  JSON.stringify([newAnimal]))
+            }
       },
     },
   };

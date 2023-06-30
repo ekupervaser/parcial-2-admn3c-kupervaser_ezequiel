@@ -2,9 +2,9 @@
     <div class="d-flex align-center flex-column">
 
         <v-card>
-            <v-card-item>
+
                 <v-card-title><span>Información de la mascota </span> </v-card-title>
-            </v-card-item>
+
             <v-card-text>
                 <ul>
                     <li><strong>Nombre:</strong> <span>{{ nombre | capitalize }}</span></li>
